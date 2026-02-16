@@ -1,55 +1,162 @@
-# Project Summary
+# Verda-Flow Onboarding Portal
 
-An onboarding portal for the Users(Dispatcher/Driver/Customer) of Verda-Flow platform to bring them onboard much prior to the launch of actual platform.
+Onboarding portal for Dispatchers, Drivers, and Customers of the
+Verda-Flow platform.\
+The system enables users to register, verify, and get provisioned before
+the main platform launch.
 
+------------------------------------------------------------------------
 
+## ✨ Features
 
-## Development Environments
+-   Multi-role onboarding (Dispatcher / Driver / Customer)
+-   Secure registration and authentication
+-   Email verification and notifications
+-   Real-time messaging support (STOMP over WebSocket)
+-   Template-based email rendering
+-   Environment-based configuration
+-   API documentation via Swagger UI
 
-**Development**
+------------------------------------------------------------------------
 
-This is the working environment for individual developers or small teams.
-Working in isolation with the rest of the tiers, the developer(s) can try radical changes to the code without adversely affecting the rest of the development team.
+## 🧱 Tech Stack
 
-**QA**
+### Backend
 
-This is exactly like "Development" but only meant for quality assurance team.
+-   Java
+-   Spring Boot
+-   Spring Data JPA
+-   Spring Security
+-   STOMP WebSocket Messaging
 
-**Staging**
+### Email & Templates
 
-The staging tier is a environment that is as identical to the production environment as possible.
-The purpose of the Staging environment is to simulate as much of the Production environment as possible.
-The Staging environment can also double as a Demonstration/Training environment.
+-   SendGrid Mail Service
+-   Apache Velocity Template Engine
 
-**Production**
+### Testing
 
-The production tier consists of 2 servers with a load balancer.
+-   Postman (API functional testing)
+-   JMeter (performance testing)
 
-## Deployment Environment
+------------------------------------------------------------------------
 
-![Alt text](https://bitbucket.org/org/verdaflow-java/downloads/Disp-Deployement-Layer.png)
+## 🌐 Environments
 
-## API Reference
+### Development
 
-```
-Dev: https://dev.verdaflow.com/verdaflow/swagger-ui.html
+Isolated environment for developers to test and implement changes
+independently.
 
-QA: https://qa.verdaflow.com/verdaflow/swagger-ui.html
+### QA
 
-Staging: https://staging.verdaflow.com/verdaflow/swagger-ui.html
-```
+Environment dedicated for quality assurance and functional validation.
 
-## APIs Testing Level
+### Staging
 
-```
-Level 1: Postman Testing (By Developer)
+Production-like environment used for: - Final validation -
+Demonstrations - Training - Pre-release verification
 
-Level 2: JMeter Testing (By Dedicated Performance Testing Team)
-```
+### Production
 
-## Security Testing Level
+Live environment deployed with: - 2 application servers - Load balancer
 
-```
-End to End Security Testing (By Dedicated Security Testing Team)
-```
+------------------------------------------------------------------------
 
+## 🚀 Deployment Architecture
+
+Application is deployed behind a load balancer with environment-specific
+configurations for Dev, QA, Staging, and Production tiers.
+
+------------------------------------------------------------------------
+
+## 📚 API Documentation
+
+### Development
+
+https://dev.verdaflow.com/verdaflow/swagger-ui.html
+
+### QA
+
+https://qa.verdaflow.com/verdaflow/swagger-ui.html
+
+### Staging
+
+https://staging.verdaflow.com/verdaflow/swagger-ui.html
+
+------------------------------------------------------------------------
+
+## 🧪 Testing Strategy
+
+### API Testing Levels
+
+**Level 1 --- Developer Testing** - Tool: Postman\
+- Scope: Functional API validation
+
+**Level 2 --- Performance Testing** - Tool: JMeter\
+- Scope: Load and stress testing
+
+------------------------------------------------------------------------
+
+## 🔐 Security Testing
+
+-   End-to-End security validation
+-   Conducted by dedicated security testing team
+-   Covers authentication, authorization, and data protection flows
+
+------------------------------------------------------------------------
+
+## ⚙️ Configuration
+
+Configuration includes: - Database connection - SendGrid API key - JWT /
+Security settings - WebSocket configuration - Environment profiles (dev,
+qa, staging, prod)
+
+Managed using Spring profiles.
+
+------------------------------------------------------------------------
+
+## 📨 Email System
+
+-   Email delivery via SendGrid
+-   Dynamic email templates using Apache Velocity
+-   Used for account verification and onboarding communication
+
+------------------------------------------------------------------------
+
+## 👥 User Roles
+
+  Role         Description
+  ------------ ----------------------------------------
+  Dispatcher   Operations management and coordination
+  Driver       Fleet personnel onboarding
+  Customer     Service user onboarding
+
+------------------------------------------------------------------------
+
+## 📦 Build & Run
+
+### Prerequisites
+
+-   Java 17+
+-   Maven
+
+### Build
+
+mvn clean install
+
+### Run
+
+mvn spring-boot:run
+
+### Run with Profile
+
+mvn spring-boot:run -Dspring-boot.run.profiles=dev
+
+------------------------------------------------------------------------
+
+## 📌 Purpose
+
+This onboarding portal ensures that all operational users are
+registered, verified, and system-ready before the main platform goes
+live.
