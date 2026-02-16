@@ -154,9 +154,3 @@ mvn spring-boot:run
 mvn spring-boot:run -Dspring-boot.run.profiles=dev
 
 ------------------------------------------------------------------------
-
-## 📌 Purpose
-
-This onboarding portal ensures that all operational users are
-registered, verified, and system-ready before the main platform goes
-live.
